@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miles of Tile Styles LLC — Business Rebuild Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --ivory:   #F8F5F0;
+    --card:    #FFFFFF;
+    --warm:    #FBF8F3;
+    --line:    #E5DFD5;
+    --ink:     #1F2A36;
+    --slate:   #5C6B7A;
+    --mist:    #9AA5B1;
+    --storm:   #335C81;
+    --gold:    #C2A36B;
+    --gain:    #3A7D5C;
+    --loss:    #A04545;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ── Header ── */
+  .header {
+    background: var(--storm);
+    color: #fff;
+    padding: 48px 60px 40px;
+    border-bottom: 4px solid var(--gold);
+  }
+  .header-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .header h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .header-sub {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 24px;
+  }
+  .header-meta {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .header-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .header-meta-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .header-meta-value {
+    font-size: 14px;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  /* ── Mission Banner ── */
+  .mission {
+    background: var(--gold);
+    padding: 18px 60px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .mission-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .mission-text {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* ── Content ── */
+  .content { padding: 48px 60px; max-width: 1200px; }
+
+  /* ── Section headers ── */
+  .section { margin-bottom: 48px; }
+  .section-title {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--storm);
+    margin-bottom: 6px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--gold);
+    display: inline-block;
+  }
+  .section-sub {
+    font-size: 13px;
+    color: var(--slate);
+    margin-bottom: 20px;
+  }
+
+  /* ── Kevin profile card ── */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .profile-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px 28px;
+  }
+  .profile-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .profile-card p {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+  .cert-badge {
+    display: inline-block;
+    background: var(--storm);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    letter-spacing: 0.04em;
+  }
+  .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .skill-tag {
+    background: var(--warm);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+  }
+
+  /* ── Channels ── */
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .channel-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+    position: relative;
+  }
+  .channel-card.tier-1 { border-left: 4px solid var(--gain); }
+  .channel-card.tier-2 { border-left: 4px solid var(--storm); }
+  .channel-card.tier-3 { border-left: 4px solid var(--mist); }
+
+  .tier-pill {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .tier-1 .tier-pill { background: rgba(58,125,92,0.12); color: var(--gain); }
+  .tier-2 .tier-pill { background: rgba(51,92,129,0.1); color: var(--storm); }
+  .tier-3 .tier-pill { background: rgba(154,165,177,0.15); color: var(--slate); }
+
+  .channel-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .channel-desc {
+    font-size: 13px;
+    color: var(--slate);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .channel-meta {
+    font-size: 12px;
+    color: var(--mist);
+    font-style: italic;
+  }
+
+  /* ── Target table ── */
+  .target-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  .target-group {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 22px 24px;
+  }
+  .target-group-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .target-item {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .target-item:last-child { border-bottom: none; }
+  .target-item strong {
+    display: block;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 1px;
+  }
+  .target-item span {
+    color: var(--slate);
+    font-size: 12px;
+  }
+
+  /* ── Timeline ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .timeline-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 0;
+    position: relative;
+  }
+  .timeline-day {
+    background: var(--storm);
+    color: #fff;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .timeline-day-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .timeline-day-name {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .timeline-tasks {
+    background: var(--card);
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .timeline-task {
+    font-size: 14px;
+    color: var(--ink);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .timeline-task::before {
+    content: '→';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .timeline-row:first-child .timeline-day { border-radius: 8px 0 0 0; }
+  .timeline-row:last-child .timeline-day { border-radius: 0 0 0 8px; }
+  .timeline-row:first-child .timeline-tasks { border-radius: 0 8px 0 0; }
+  .timeline-row:last-child .timeline-tasks { border-radius: 0 0 8px 0; }
+
+  /* ── Positioning box ── */
+  .position-box {
+    background: var(--storm);
+    color: #fff;
+    border-radius: 8px;
+    padding: 32px 36px;
+    margin-bottom: 48px;
+  }
+  .position-box-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .position-box h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .position-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 32px;
+  }
+  .position-point {
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .position-point::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── Market stats ── */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .stat-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 20px 22px;
+    text-align: center;
+  }
+  .stat-value {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--storm);
+    margin-bottom: 4px;
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--slate);
+  }
+
+  /* ── Footer ── */
+  .footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.5);
+    padding: 24px 60px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 64px;
+  }
+  .footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .header, .mission, .content, .footer { padding-left: 24px; padding-right: 24px; }
+    .channel-grid, .target-grid, .stats-row, .profile-grid, .position-points { grid-template-columns: 1fr; }
+    .header h1 { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-eyebrow">Business Rebuild Plan · May 2026</div>
+  <h1>Miles of Tile Styles LLC</h1>
+  <div class="header-sub">Kevin Gardner · Boulder, Colorado</div>
+  <div class="header-meta">
+    <div class="header-meta-item">
+      <span class="header-meta-label">Phone</span>
+      <span class="header-meta-value">303.517.2742</span>
+    </div>
+    <div class="header-meta-item">
+      <span class="header-meta-label">Experience</span>
+      <span class="header-meta-value">30+ Years</span>
+    </div>
+    <div class="header-meta-item">
+      <span class="header-meta-label">Certification</span>
+      <span class="header-meta-value">Wedi PRO #00599</span>
+    </div>
+    <div class="header-meta-item">
+      <span class="header-meta-label">Market</span>
+      <span class="header-meta-value">Boulder, CO (City-focused)</span>
+    </div>
+    <div class="header-meta-item">
+      <span class="header-meta-label">Instagram</span>
+      <span class="header-meta-value">@miles.of.tile.styles.llc</span>
+    </div>
+  </div>
+</div>
+
+<!-- Mission banner -->
+<div class="mission">
+  <div class="mission-label">🎯 Week 1 Goal</div>
+  <div class="mission-text">Deposit in hand from a paying client by Friday, May 29</div>
+</div>
+
+<div class="content">
+
+  <!-- Market stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-value">$20–30k</div>
+      <div class="stat-label">Avg Boulder bathroom remodel</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">88–95%</div>
+      <div class="stat-label">ROI at resale — Boulder County</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">Months</div>
+      <div class="stat-label">Wait time at top local competitors</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">+18%</div>
+      <div class="stat-label">CO tile rates vs. national avg</div>
+    </div>
+  </div>
+
+  <!-- Positioning -->
+  <div class="position-box">
+    <div class="position-box-label">Kevin's Edge</div>
+    <h3>The best Boulder tile installers are booked months out.<br>Kevin is available now — and he's better.</h3>
+    <div class="position-points">
+      <div class="position-point">30 years of high-end tile — certifiably above local competition</div>
+      <div class="position-point">Wedi PRO Certified #00599 — credential designers and shops care about</div>
+      <div class="position-point">Does the work himself — no crew flip, no subcontractor roulette</div>
+      <div class="position-point">Schluter KERDI/DITRA, heated floors, curbless showers, steam — full capability</div>
+      <div class="position-point">Fully insured — no risk to the homeowner or GC</div>
+      <div class="position-point">Answers every Boulder complaint: reliable, communicates, shows up</div>
+    </div>
+  </div>
+
+  <!-- Kevin profile -->
+  <div class="section">
+    <div class="section-title">Who Is Kevin</div>
+    <div class="section-sub">Background, expertise, and digital presence</div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-card-label">Professional Background</div>
+        <p>Owner of Miles of Tile Styles LLC since 1995. Specializing in high-end residential bathroom and shower renovations. Returned to Boulder to rebuild the business with a focus on premium craftsmanship and direct client relationships.</p>
+        <p style="margin-top:10px;">Full bathroom remodels — head to toe. Gut jobs, substrate prep, waterproofing, tile, trim. Not just a tile guy — a complete renovation solution.</p>
+        <div class="cert-badge">Wedi PRO Certified Installer · #00599 · Since 2017</div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Specialized Skills</div>
+        <div class="skill-list">
+          <span class="skill-tag">Curbless Shower Systems</span>
+          <span class="skill-tag">Wedi Shower Systems</span>
+          <span class="skill-tag">Schluter KERDI & DITRA</span>
+          <span class="skill-tag">Heated Floor Systems</span>
+          <span class="skill-tag">Large-Format Tile</span>
+          <span class="skill-tag">Steam Shower Waterproofing</span>
+          <span class="skill-tag">Geometric Tile Layouts</span>
+          <span class="skill-tag">Precision Miters & Edging</span>
+          <span class="skill-tag">Mud & Float Work</span>
+          <span class="skill-tag">Porcelain, Stone & Mosaic</span>
+          <span class="skill-tag">Drain & Plumbing Integration</span>
+          <span class="skill-tag">Substrate Prep & Correction</span>
+        </div>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Current Digital Presence</div>
+        <p><strong>Facebook:</strong> facebook.com/milesoftilestylesllc<br>Portfolio photos, active page — more action than Instagram.</p>
+        <p style="margin-top:8px;"><strong>Instagram:</strong> @miles.of.tile.styles.llc<br>Additional portfolio. Activate both this week.</p>
+        <p style="margin-top:8px;"><strong>Website:</strong> None yet — Gerald building a one-pager this week. Interior designers and architects need a link to send clients.</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Business Philosophy</div>
+        <p>Independent contractor model. Kevin does the work — not a crew manager. This is the positioning: when you hire Kevin, Kevin shows up.</p>
+        <p style="margin-top:10px;">Scale path: start solo → build relationships → bring in experienced installers for larger projects when needed. Nothing too small, nothing too large to start.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- This Week Timeline -->
+  <div class="section">
+    <div class="section-title">This Week — Friday Deposit Plan</div>
+    <div class="section-sub">Every action this week is aimed at one thing: a deposit by May 29</div>
+    <div class="timeline">
+      <div class="timeline-row">
+        <div class="timeline-day">
+          <div class="timeline-day-label">Today</div>
+          <div class="timeline-day-name">Mon</div>
+        </div>
+        <div class="timeline-tasks">
+          <div class="timeline-task">Post on Facebook (Miles of Tile Styles page) — "Back in Boulder" + portfolio photos</div>
+          <div class="timeline-task">Post on Nextdoor — Boulder neighborhoods (Mapleton, NoBo, Table Mesa, Chautauqua, Whittier)</div>
+          <div class="timeline-task">Post on Craigslist Boulder — Skilled Trades section</div>
+          <div class="timeline-task">Gerald builds website + outreach email templates</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-day">
+          <div class="timeline-day-label">Day 2</div>
+          <div class="timeline-day-name">Tue</div>
+        </div>
+        <div class="timeline-tasks">
+          <div class="timeline-task">Walk into Crossville Studios (5345 Arapahoe Ave, Boulder) — show Wedi cert, introduce as available for referrals</div>
+          <div class="timeline-task">Walk into Star Flooring & Design and one other tile showroom</div>
+          <div class="timeline-task">Email Melton Design Build, Factor Design Build, Tectonic, SoBo Homes — subcontracting availability</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-day">
+          <div class="timeline-day-label">Day 3</div>
+          <div class="timeline-day-name">Wed</div>
+        </div>
+        <div class="timeline-tasks">
+          <div class="timeline-task">Email interior designers — Joe McGuire Design, Emily Tucker Design, Pocci Design Group, Kari Whitman Interiors</div>
+          <div class="timeline-task">Follow up by phone on any Nextdoor/Facebook leads</div>
+          <div class="timeline-task">Watch r/boulder for tile/remodel recommendation requests — reply genuinely</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-day">
+          <div class="timeline-day-label">Day 4</div>
+          <div class="timeline-day-name">Thu</div>
+        </div>
+        <div class="timeline-tasks">
+          <div class="timeline-task">Follow-up calls to design-build firms emailed Tuesday</div>
+          <div class="timeline-task">Free estimates for any warm leads from earlier in the week</div>
+          <div class="timeline-task">Dennison Interior Design, Tumu Studio outreach</div>
+        </div>
+      </div>
+      <div class="timeline-row">
+        <div class="timeline-day">
+          <div class="timeline-day-label">Goal</div>
+          <div class="timeline-day-name">Fri</div>
+        </div>
+        <div class="timeline-tasks">
+          <div class="timeline-task"><strong>Deposit in hand.</strong> Doesn't matter if it's a $500 tile repair or a $15k bathroom — a signed commitment with money down.</div>
+          <div class="timeline-task">Debrief: what worked, what didn't. Double down for Week 2.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Acquisition Channels -->
+  <div class="section">
+    <div class="section-title">Acquisition Channels</div>
+    <div class="section-sub">Prioritized by speed to first lead. Running Tier 1 and Tier 2 concurrently.</div>
+    <div class="channel-grid">
+      <div class="channel-card tier-1">
+        <span class="tier-pill">Tier 1 — This Week</span>
+        <div class="channel-name">Nextdoor & Facebook Groups</div>
+        <div class="channel-desc">Post in Boulder neighborhood groups. Personal, local, zero cost. Research shows Boulder homeowners actively post asking for tile installer recs — this is where they look.</div>
+        <div class="channel-meta">Speed: hours to first lead · Effort: low</div>
+      </div>
+      <div class="channel-card tier-1">
+        <span class="tier-pill">Tier 1 — This Week</span>
+        <div class="channel-name">Facebook Page Activation</div>
+        <div class="channel-desc">"Back in Boulder" post with portfolio photos. Existing followers, existing portfolio — just needs a reactivation. Ask for referrals from people who already know Kevin's work.</div>
+        <div class="channel-meta">Speed: hours to first lead · Effort: low</div>
+      </div>
+      <div class="channel-card tier-1">
+        <span class="tier-pill">Tier 1 — This Week</span>
+        <div class="channel-name">Craigslist Boulder</div>
+        <div class="channel-desc">Post under Skilled Trades. Still drives real local leads for contractors. Title: "Expert Tile Installer — Bathroom Remodels | 30 Years | Wedi Certified | Boulder"</div>
+        <div class="channel-meta">Speed: hours to first lead · Effort: low</div>
+      </div>
+      <div class="channel-card tier-2">
+        <span class="tier-pill">Tier 2 — This Week</span>
+        <div class="channel-name">Tile Shop Walk-Ins</div>
+        <div class="channel-desc">Crossville Studios, Star Flooring & Design, Decorative Materials. Walk in with Wedi cert and portfolio. Shops get asked for installer referrals constantly — Kevin gets on their list.</div>
+        <div class="channel-meta">Speed: days · Effort: medium · #1 priority is Crossville (already on resume)</div>
+      </div>
+      <div class="channel-card tier-2">
+        <span class="tier-pill">Tier 2 — This Week</span>
+        <div class="channel-name">Design-Build Firm Outreach</div>
+        <div class="channel-desc">Email then call: Melton Design Build (top Boulder firm), Factor Design Build, Tectonic, SoBo Homes, TRÄD. They need trusted tile subs. Wedi cert is the credential that gets the reply.</div>
+        <div class="channel-meta">Speed: days–weeks · Effort: medium · Long-term value very high</div>
+      </div>
+      <div class="channel-card tier-2">
+        <span class="tier-pill">Tier 2 — This Week</span>
+        <div class="channel-name">Interior Designer Outreach</div>
+        <div class="channel-desc">Joe McGuire Design, Emily Tucker Design, Pocci Design Group, Kari Whitman Interiors, Dennison Interior Design, Tumu Studio. They specify tile on every project and need a reliable installer to call.</div>
+        <div class="channel-meta">Speed: weeks · Effort: medium · Recurring high-value source</div>
+      </div>
+      <div class="channel-card tier-3">
+        <span class="tier-pill">Tier 3 — Week 2+</span>
+        <div class="channel-name">Flyer Campaign</div>
+        <div class="channel-desc">Target high-income Boulder neighborhoods: Mapleton Hill, Chautauqua, North Boulder, University Hill. Older homes + money = bathroom remodel candidates.</div>
+        <div class="channel-meta">Speed: weeks · Effort: medium</div>
+      </div>
+      <div class="channel-card tier-3">
+        <span class="tier-pill">Tier 3 — Week 2+</span>
+        <div class="channel-name">Facebook Ads</div>
+        <div class="channel-desc">Geo-targeted Boulder, homeowners 35–65, bathroom remodel intent. Not the fastest path but builds a steady funnel. Budget to be determined after organic channels prove out.</div>
+        <div class="channel-meta">Speed: weeks · Effort: medium</div>
+      </div>
+      <div class="channel-card tier-3">
+        <span class="tier-pill">Tier 3 — Skip</span>
+        <div class="channel-name">Angie's List / Thumbtack</div>
+        <div class="channel-desc">Kevin explicitly said no. High competition, race to the bottom on price. Not aligned with his positioning as a premium installer. Skip entirely.</div>
+        <div class="channel-meta">Decision: pass</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- B2B Targets -->
+  <div class="section">
+    <div class="section-title">B2B Target List</div>
+    <div class="section-sub">These firms need a reliable tile installer they can call on every project. One relationship here = recurring work.</div>
+    <div class="target-grid">
+      <div class="target-group">
+        <div class="target-group-label">Design-Build Firms</div>
+        <div class="target-item"><strong>Melton Design Build</strong><span>meltondesignbuild.com · Boulder's top firm, 30+ yrs · #1 priority</span></div>
+        <div class="target-item"><strong>Factor Design Build</strong><span>factordesignbuild.com · Luxury Boulder remodels</span></div>
+        <div class="target-item"><strong>Tectonic Design Build</strong><span>tectonicbuilds.com · Integrated high-end</span></div>
+        <div class="target-item"><strong>SoBo Homes</strong><span>sobohomes.com · Full-service remodels</span></div>
+        <div class="target-item"><strong>TRÄD Design + Build</strong><span>traddesignbuild.com · Sustainable, Boulder County</span></div>
+        <div class="target-item"><strong>Forge & Bow</strong><span>forgeandbow.com · Architect-led, historic + custom</span></div>
+      </div>
+      <div class="target-group">
+        <div class="target-group-label">Interior Designers</div>
+        <div class="target-item"><strong>Joe McGuire Design</strong><span>joemcguiredesign.com · Award-winning, natural materials</span></div>
+        <div class="target-item"><strong>Emily Tucker Design</strong><span>etuckerdesign.com · Gut renos, custom residential</span></div>
+        <div class="target-item"><strong>Pocci Design Group</strong><span>poccidesigngroup.com · Unique finishes, architectural</span></div>
+        <div class="target-item"><strong>Kari Whitman Interiors</strong><span>kariwhitmaninteriors.com · Luxury, eco-friendly</span></div>
+        <div class="target-item"><strong>Dennison Interior Design</strong><span>dennisoninteriordesign.com · Bathroom focus</span></div>
+        <div class="target-item"><strong>Tumu Studio</strong><span>tumustudio.com · Materiality-focused</span></div>
+      </div>
+      <div class="target-group">
+        <div class="target-group-label">Tile Shops & Showrooms</div>
+        <div class="target-item"><strong>Crossville Studios</strong><span>5345 Arapahoe Ave, Boulder · On Kevin's resume already · Walk in first</span></div>
+        <div class="target-item"><strong>Star Flooring & Design</strong><span>Boulder · High-end tile + flooring showroom</span></div>
+        <div class="target-item"><strong>Decorative Materials</strong><span>Boulder/Denver · Custom tile specialist</span></div>
+        <div class="target-item"><strong>Ann Sacks</strong><span>Denver showroom · Luxury stone/tile, Boulder clients</span></div>
+        <div class="target-item"><strong>Boulder Design Group</strong><span>boulderdesigngrp.com · Kitchen/bath specialists</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What Boulder Homeowners Want -->
+  <div class="section">
+    <div class="section-title">What Boulder Homeowners Are Saying</div>
+    <div class="section-sub">Research from Reddit r/boulder, Nextdoor, and Facebook groups — May 2026</div>
+    <div class="channel-grid">
+      <div class="channel-card" style="border-left: 4px solid var(--gain);">
+        <div class="channel-name" style="font-size:15px;">What They're Looking For</div>
+        <div class="channel-desc">Reliable, insured pros who communicate. Someone who coordinates well with other trades, handles permits, finishes on time. They post recommendations constantly — when they find someone good, they share.</div>
+      </div>
+      <div class="channel-card" style="border-left: 4px solid var(--loss);">
+        <div class="channel-name" style="font-size:15px;">What They Complain About</div>
+        <div class="channel-desc">"Boulder Tax" (inflated quotes), contractors who ghost, crews who can't take smaller jobs, poor communication during work. Top-tier installers are booked months out. This is the gap Kevin fills.</div>
+      </div>
+      <div class="channel-card" style="border-left: 4px solid var(--gold);">
+        <div class="channel-name" style="font-size:15px;">What They Pay</div>
+        <div class="channel-desc">Full bathroom remodels: $20k–$30k+ is common. Handyman rates: $75–$135/hr. Tile labor: $30–$40+/sq ft. Boulder is 18% above national average — and homeowners know it and accept it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gerald's Build List -->
+  <div class="section">
+    <div class="section-title">Gerald's Build List</div>
+    <div class="section-sub">Assets Gerald is building to support Kevin's relaunch</div>
+    <div class="profile-grid">
+      <div class="profile-card">
+        <div class="profile-card-label">Website (This Week)</div>
+        <p>Simple one-pager: hero photo, 3-line intro, specialty list, Wedi cert badge, portfolio gallery (pulled from Facebook), phone + contact form. Mobile-first. Interior designers need a link to send clients — Facebook isn't that.</p>
+        <p style="margin-top:8px; color:var(--slate); font-size:13px;">Domain to check: milesoftilestylesllc.com</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Resume Variants (This Week)</div>
+        <p><strong>Client version</strong> — warm, "I'll take care of your bathroom start to finish"<br>
+        <strong>Builder/GC version</strong> — credentials-forward, Wedi cert, Schluter systems<br>
+        <strong>Architect/designer version</strong> — material knowledge, complex installs<br>
+        <strong>Tile shop version</strong> — certified, referral-ready, quick turnaround</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Social Posts (Today)</div>
+        <p>Draft posts for:<br>
+        → Facebook page ("Back in Boulder" announcement)<br>
+        → Nextdoor (neighborhood-friendly, personal)<br>
+        → Craigslist (Skilled Trades, keyword-optimized)<br>
+        → Reddit r/boulder reply template</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-card-label">Outreach Emails (Tomorrow)</div>
+        <p>Two versions:<br>
+        → Design-build firms (subcontracting angle, Wedi cert lead)<br>
+        → Interior designers (collaborative angle, reliability focus)<br><br>
+        4 sentences max. Subject: "Wedi-Certified Tile Installer Available — Boulder Subcontracting"</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <span>Miles of Tile Styles LLC · Business Rebuild Plan · May 2026 · Prepared by Gerald 🍊</span>
+  <span>303.517.2742 · <a href="https://facebook.com/milesoftilestylesllc">Facebook</a> · <a href="https://instagram.com/miles.of.tile.styles.llc">Instagram</a></span>
+</div>
+
+</body>
+</html>
