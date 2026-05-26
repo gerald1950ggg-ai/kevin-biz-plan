@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website & Professional Email Setup Guide — Miles of Tile Styles LLC</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracotta:  #C75B39;
+      --teal:        #2A7B88;
+      --charcoal:    #2C2C2C;
+      --ivory:       #F8F5F0;
+      --gold:        #C2A36B;
+      --white:       #FFFFFF;
+      --light-gray:  #F0EDEA;
+      --border:      #DDD8D2;
+      --teal-light:  #EAF4F6;
+      --terra-light: #FBF0EC;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--charcoal);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Page wrapper ─── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 64px;
+    }
+
+    /* ─── Header ─── */
+    .site-header {
+      border-top: 5px solid var(--terracotta);
+      padding-top: 32px;
+      margin-bottom: 40px;
+    }
+
+    .site-header .brand {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .site-header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--charcoal);
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .site-header .subtitle {
+      font-size: 1rem;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .site-header .cost-badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: var(--teal);
+      color: var(--white);
+      font-size: 0.875rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─── Overview section ─── */
+    .overview {
+      margin-bottom: 48px;
+    }
+
+    .overview h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    /* ─── Stack table ─── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 16px 0 24px;
+    }
+
+    thead th {
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    tbody tr:nth-child(even) { background: var(--light-gray); }
+    tbody tr:nth-child(odd)  { background: var(--white); }
+
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    tbody td:first-child { font-weight: 600; }
+
+    /* ─── How-it-works flow box ─── */
+    .flow-box {
+      background: var(--ivory);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 16px 0 24px;
+      font-size: 0.88rem;
+    }
+
+    .flow-box pre {
+      font-family: 'Inter', 'Courier New', monospace;
+      font-size: 0.82rem;
+      color: var(--charcoal);
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.8;
+    }
+
+    /* ─── Domain status callout ─── */
+    .callout-available {
+      background: #EAF6EC;
+      border-left: 4px solid #3A9E55;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2A6A38;
+    }
+
+    /* ─── Steps ─── */
+    .steps { margin-top: 8px; }
+
+    .step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 48px;
+      align-items: flex-start;
+    }
+
+    .step-badge {
+      flex-shrink: 0;
+      width: 52px;
+      height: 52px;
+      background: var(--terracotta);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-top: 2px;
+      box-shadow: 0 2px 8px rgba(199, 91, 57, 0.3);
+    }
+
+    .step-content { flex: 1; min-width: 0; }
+
+    .step-content h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+    }
+
+    .step-where {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 14px;
+    }
+
+    .step-content p {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    .step-content ol,
+    .step-content ul {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    .step-content li {
+      margin-bottom: 7px;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .step-content ol li::marker {
+      font-weight: 600;
+      color: var(--terracotta);
+    }
+
+    /* ─── Sub-steps (5a, 5b, etc.) ─── */
+    .substep {
+      margin: 20px 0 16px;
+    }
+
+    .substep h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teal);
+      border-left: 3px solid var(--teal);
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ─── Links ─── */
+    a {
+      color: var(--teal);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    a:hover { border-bottom-color: var(--teal); }
+
+    /* ─── Tip / Note / Warning boxes ─── */
+    .tip, .warning, .note, .optional {
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .tip {
+      background: var(--ivory);
+      border-left: 4px solid var(--gold);
+    }
+
+    .note {
+      background: var(--teal-light);
+      border-left: 4px solid var(--teal);
+    }
+
+    .warning {
+      background: var(--terra-light);
+      border-left: 4px solid var(--terracotta);
+    }
+
+    .optional {
+      background: #F5F0FF;
+      border-left: 4px solid #8A6BBF;
+    }
+
+    .tip strong, .warning strong, .note strong, .optional strong {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .tip strong    { color: var(--gold); }
+    .warning strong { color: var(--terracotta); }
+    .note strong   { color: var(--teal); }
+    .optional strong { color: #8A6BBF; }
+
+    /* ─── Code / inline code ─── */
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85em;
+      background: #EBEBEB;
+      color: var(--terracotta);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* ─── DNS record blocks ─── */
+    .dns-record {
+      background: var(--charcoal);
+      color: #E8E4DF;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin: 10px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    .dns-record .label {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    /* ─── Checklist (Step 7) ─── */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 16px;
+    }
+
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      transition: background 0.1s;
+    }
+
+    .checklist li:first-child { border-top: 1px solid var(--border); }
+    .checklist li:hover { background: var(--ivory); }
+
+    .checklist input[type="checkbox"] {
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+
+    /* ─── Important Notes section ─── */
+    .notes-section {
+      margin-top: 48px;
+    }
+
+    .notes-section h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: 620px) {
+      .notes-grid { grid-template-columns: 1fr; }
+    }
+
+    .notes-card {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--gold);
+      border-radius: 0 0 8px 8px;
+      padding: 16px 18px;
+    }
+
+    .notes-card h3 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+
+    .notes-card ul {
+      padding-left: 18px;
+      font-size: 0.88rem;
+    }
+
+    .notes-card li { margin-bottom: 6px; }
+
+    .limitation-card {
+      border-top-color: var(--terracotta);
+      grid-column: 1 / -1;
+    }
+
+    .limitation-card h3 { color: var(--terracotta); }
+
+    /* ─── Quick Reference Card ─── */
+    .reference-card {
+      background: var(--charcoal);
+      color: #F0EDE8;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-top: 32px;
+    }
+
+    .reference-card h2 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 16px;
+    }
+
+    .reference-card table {
+      font-size: 0.88rem;
+      margin: 0;
+    }
+
+    .reference-card thead th {
+      background: rgba(255,255,255,0.08);
+      color: var(--gold);
+      font-size: 0.75rem;
+    }
+
+    .reference-card tbody tr:nth-child(even) { background: rgba(255,255,255,0.05); }
+    .reference-card tbody tr:nth-child(odd)  { background: transparent; }
+    .reference-card tbody td { border-bottom-color: rgba(255,255,255,0.1); color: #E8E4DF; }
+    .reference-card tbody td:first-child { color: var(--white); }
+    .reference-card a { color: var(--gold); border-bottom-color: transparent; }
+
+    .support-note {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #B8B0A6;
+    }
+
+    /* ─── Footer ─── */
+    .site-footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.82rem;
+      color: #999;
+    }
+
+    /* ─── Mobile responsive ─── */
+    @media (max-width: 600px) {
+      .page { padding: 24px 16px 48px; }
+      .site-header h1 { font-size: 1.5rem; }
+      .step { gap: 16px; }
+      .step-badge { width: 42px; height: 42px; font-size: 1.1rem; }
+      .step-content h2 { font-size: 1.1rem; }
+      table { font-size: 0.82rem; }
+      thead th, tbody td { padding: 8px 10px; }
+    }
+
+    /* ─── Print styles ─── */
+    @media print {
+      @page { size: letter; margin: 0.75in; }
+
+      body { font-size: 11pt; color: #000; }
+
+      .page { max-width: none; padding: 0; }
+
+      .site-header { border-top-color: #000; }
+      .site-header .cost-badge { background: #333; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      .step-badge {
+        background: #333 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        box-shadow: none;
+      }
+
+      a { color: #000; text-decoration: underline; border: none; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #666; }
+
+      .flow-box, .tip, .note, .warning, .optional, .notes-card {
+        background: #f7f7f7 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .reference-card {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .reference-card thead th { background: #ddd !important; color: #000 !important; }
+      .reference-card tbody td { color: #000 !important; }
+      .reference-card a { color: #000 !important; }
+      .reference-card h2 { color: #333 !important; }
+
+      .dns-record {
+        background: #2C2C2C !important;
+        color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .step { break-inside: avoid; page-break-inside: avoid; }
+      h2, h3 { page-break-after: avoid; }
+
+      thead th { background: #444 !important; color: #fff !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      tbody tr:nth-child(even) { background: #f0f0f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+      .site-footer { display: block; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ─── Header ─── -->
+  <header class="site-header">
+    <div class="brand">Miles of Tile Styles LLC</div>
+    <h1>Website &amp; Professional Email Setup Guide</h1>
+    <div class="subtitle">Domain + Hosting + Professional Email — All Free (Except the Domain)</div>
+    <div class="cost-badge">Cost: ~$12/year for the domain. Everything else is free.</div>
+  </header>
+
+  <!-- ─── Overview ─── -->
+  <section class="overview">
+    <h2>Overview</h2>
+    <p>This guide walks through setting up a professional website and business email for Miles of Tile Styles LLC. The entire stack costs ~$12/year (just the domain registration). Everything else is free.</p>
+
+    <h3 style="font-size:1rem;font-weight:700;color:var(--charcoal);margin:20px 0 10px;">The Stack</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Component</th>
+          <th>Service</th>
+          <th>Cost</th>
+          <th>What It Does</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Domain name</td>
+          <td><a href="https://www.domain.com" target="_blank">Domain.com</a> or <a href="https://www.namecheap.com" target="_blank">Namecheap</a></td>
+          <td>~$10–15/year</td>
+          <td>Own <code>milesoftilestyles.com</code></td>
+        </tr>
+        <tr>
+          <td>DNS + Email routing</td>
+          <td>Cloudflare (free plan)</td>
+          <td>$0</td>
+          <td>Routes web traffic to GitHub, email to Gmail</td>
+        </tr>
+        <tr>
+          <td>Website hosting</td>
+          <td>GitHub Pages</td>
+          <td>$0</td>
+          <td>Hosts the actual website files</td>
+        </tr>
+        <tr>
+          <td>Email inbox</td>
+          <td>Gmail (Kevin's existing)</td>
+          <td>$0</td>
+          <td>Receives and sends email as <code>kevin@milesoftilestyles.com</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-size:1rem;font-weight:700;color:var(--charcoal);margin:20px 0 10px;">How It Works</h3>
+    <div class="flow-box">
+      <pre>Web visitor types milesoftilestyles.com
+  → Cloudflare DNS receives the request
+  → Routes to GitHub Pages (your website loads)
+
+Someone emails kevin@milesoftilestyles.com
+  → Cloudflare Email Routing receives it
+  → Forwards to Kevin's personal Gmail inbox
+
+Kevin replies from Gmail
+  → Gmail sends it showing "kevin@milesoftilestyles.com" as the sender
+  → Client never sees the personal Gmail address</pre>
+    </div>
+
+    <div class="callout-available">
+      ✅ &nbsp;<code>milesoftilestyles.com</code> is available as of May 26, 2026. Register it before someone else does.
+    </div>
+  </section>
+
+  <!-- ─── Steps ─── -->
+  <div class="steps">
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-badge">1</div>
+      <div class="step-content">
+        <h2>Buy the Domain</h2>
+        <div class="step-where">Where: <a href="https://www.domain.com" target="_blank">domain.com</a> or <a href="https://www.namecheap.com" target="_blank">namecheap.com</a></div>
+
+        <ol>
+          <li>Go to <a href="https://www.domain.com" target="_blank">domain.com</a> or <a href="https://www.namecheap.com" target="_blank">namecheap.com</a></li>
+          <li>Search for <code>milesoftilestyles.com</code></li>
+          <li>Purchase it (typically $10–15/year for a <code>.com</code>)</li>
+          <li><strong>Enable Domain Privacy</strong> if offered (usually free or a few dollars) — keeps Kevin's personal address off the public WHOIS record</li>
+          <li><strong>Do NOT buy their email add-on</strong> — we're using Cloudflare for free instead</li>
+        </ol>
+
+        <div class="warning">
+          <strong>⚠ Important</strong>
+          Save your registrar login credentials. You'll need them in Step 3 to change nameservers.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-badge">2</div>
+      <div class="step-content">
+        <h2>Create a Cloudflare Account</h2>
+        <div class="step-where">Where: <a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a></div>
+
+        <ol>
+          <li>Go to <a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a> and sign up (free)</li>
+          <li>Click <strong>"Add a Site"</strong> (or "Onboard a domain")</li>
+          <li>Enter <code>milesoftilestyles.com</code></li>
+          <li>Select the <strong>Free plan</strong></li>
+          <li>Cloudflare will scan for existing DNS records — let it finish</li>
+          <li>Cloudflare will give you <strong>two nameservers</strong> (they look like <code>name1.ns.cloudflare.com</code> and <code>name2.ns.cloudflare.com</code>)</li>
+          <li><strong>Write down or copy both nameserver addresses</strong> — you need them in the next step</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-badge">3</div>
+      <div class="step-content">
+        <h2>Point Domain to Cloudflare</h2>
+        <div class="step-where">Where: Your domain registrar (Domain.com or Namecheap)</div>
+
+        <ol>
+          <li>Log back into your <strong>domain registrar</strong> (Domain.com or Namecheap)</li>
+          <li>Find the <strong>Nameservers</strong> or <strong>DNS settings</strong> section for your domain</li>
+          <li>Change the nameservers from the default ones to the <strong>two Cloudflare nameservers</strong> from Step 2</li>
+          <li>Save</li>
+          <li>Wait 15–60 minutes for propagation</li>
+          <li>Back in Cloudflare, your domain should show as <strong>"Active"</strong></li>
+        </ol>
+
+        <div class="note">
+          <strong>💡 What this does</strong>
+          Cloudflare now controls all traffic for your domain. It decides where web visitors go and where emails go. This is what makes everything else possible.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="step">
+      <div class="step-badge">4</div>
+      <div class="step-content">
+        <h2>Set Up Email Routing (Receive Email)</h2>
+        <div class="step-where">Where: Cloudflare Dashboard → Email → Email Routing</div>
+
+        <p>This lets people email <code>kevin@milesoftilestyles.com</code> and have it land in Kevin's Gmail.</p>
+
+        <ol>
+          <li>In the Cloudflare dashboard, click on your domain (<code>milesoftilestyles.com</code>)</li>
+          <li>In the left sidebar, click <strong>Email</strong> → <strong>Email Routing</strong></li>
+          <li>Click <strong>"Get Started"</strong> or <strong>"Enable Email Routing"</strong></li>
+          <li>Cloudflare will offer to add MX and TXT records automatically — <strong>accept</strong> (click "Add records and enable")</li>
+          <li>Go to <strong>Routing Rules</strong> → click <strong>"Create Address"</strong></li>
+          <li>Fill in:
+            <ul>
+              <li><strong>Custom address:</strong> <code>kevin</code> (this creates <code>kevin@milesoftilestyles.com</code>)</li>
+              <li><strong>Action:</strong> Send to an email</li>
+              <li><strong>Destination:</strong> Kevin's personal Gmail address (e.g., <code>kevsbliss@icloud.com</code> or his Gmail)</li>
+            </ul>
+          </li>
+          <li>Click <strong>Save</strong></li>
+          <li>Cloudflare sends a <strong>verification email</strong> to Kevin's Gmail — <strong>Kevin must click the verify link</strong> in that email</li>
+          <li>Once verified, the rule goes active</li>
+        </ol>
+
+        <div class="optional">
+          <strong>✦ Optional — Catch-all</strong>
+          You can also enable a catch-all rule so that ANY email sent to <code>@milesoftilestyles.com</code> (typos, <code>info@</code>, <code>hello@</code>, anything) gets forwarded to Kevin's Gmail. This is under the same Routing Rules page.
+        </div>
+
+        <div class="tip">
+          <strong>🧪 Test it</strong>
+          Send an email from any other account to <code>kevin@milesoftilestyles.com</code>. It should arrive in Kevin's Gmail within seconds.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="step">
+      <div class="step-badge">5</div>
+      <div class="step-content">
+        <h2>Set Up Gmail "Send As" (Send Email)</h2>
+        <div class="step-where">Where: Gmail Settings → Accounts and Import</div>
+
+        <p>This lets Kevin reply <em>from</em> <code>kevin@milesoftilestyles.com</code> using his Gmail. The client never sees his personal address.</p>
+
+        <!-- 5a -->
+        <div class="substep">
+          <h3>5a — Create a Google App Password</h3>
+          <p>Gmail requires a special "App Password" for this (regular password won't work if 2FA is enabled, which it should be).</p>
+          <ol>
+            <li>Go to <a href="https://myaccount.google.com" target="_blank">myaccount.google.com</a></li>
+            <li>Click <strong>Security</strong> in the left sidebar</li>
+            <li>Make sure <strong>2-Step Verification</strong> is turned ON (if not, enable it first)</li>
+            <li>Search for <strong>"App Passwords"</strong> or go to: <a href="https://myaccount.google.com/apppasswords" target="_blank">myaccount.google.com/apppasswords</a></li>
+            <li>Select <strong>Mail</strong> as the app</li>
+            <li>Click <strong>Generate</strong></li>
+            <li>Google gives you a <strong>16-character password</strong> — <strong>copy it and save it</strong>, you'll need it in the next step</li>
+          </ol>
+        </div>
+
+        <!-- 5b -->
+        <div class="substep">
+          <h3>5b — Add the Custom Address in Gmail</h3>
+          <ol>
+            <li>Open Gmail</li>
+            <li>Click the <strong>gear icon</strong> (top right) → <strong>See all settings</strong></li>
+            <li>Go to the <strong>"Accounts and Import"</strong> tab</li>
+            <li>Under <strong>"Send mail as:"</strong> click <strong>"Add another email address"</strong></li>
+            <li>Fill in:
+              <ul>
+                <li><strong>Name:</strong> Kevin Gardner (or "Miles of Tile Styles" — whatever Kevin wants recipients to see)</li>
+                <li><strong>Email address:</strong> <code>kevin@milesoftilestyles.com</code></li>
+                <li>Uncheck "Treat as an alias" (optional — either way works for this use case)</li>
+              </ul>
+            </li>
+            <li>Click <strong>Next Step</strong></li>
+            <li>Fill in SMTP details:
+              <ul>
+                <li><strong>SMTP Server:</strong> <code>smtp.gmail.com</code></li>
+                <li><strong>Port:</strong> <code>587</code></li>
+                <li><strong>Username:</strong> Kevin's full Gmail address (e.g., <code>kevsbliss@gmail.com</code>)</li>
+                <li><strong>Password:</strong> The 16-character App Password from Step 5a</li>
+                <li><strong>Encryption:</strong> TLS (should be selected by default)</li>
+              </ul>
+            </li>
+            <li>Click <strong>Add Account</strong></li>
+            <li>Gmail sends a confirmation code to <code>kevin@milesoftilestyles.com</code> — since Cloudflare is already forwarding email, this will land in Kevin's Gmail</li>
+            <li>Enter the confirmation code or click the link in the email</li>
+          </ol>
+
+          <div class="tip">
+            <strong>✅ Done</strong>
+            Now when Kevin composes a new email or replies, he can select <code>kevin@milesoftilestyles.com</code> in the "From" dropdown. Replies to business emails will auto-fill with the business address.
+          </div>
+        </div>
+
+        <!-- 5c -->
+        <div class="substep">
+          <h3>5c — Make It the Default (Optional)</h3>
+          <p>In Gmail → Settings → Accounts and Import → Send mail as, click <strong>"make default"</strong> next to the <code>kevin@milesoftilestyles.com</code> address. Now all outgoing email defaults to the business address.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="step">
+      <div class="step-badge">6</div>
+      <div class="step-content">
+        <h2>Set Up the Website on GitHub Pages</h2>
+        <div class="step-where">Where: GitHub → Repo Settings → Pages + Cloudflare DNS</div>
+
+        <p>We already have a GitHub repo (<code>gerald1950ggg-ai/kevin-biz-plan</code>) with the website files. We just need to connect the custom domain.</p>
+
+        <!-- 6a -->
+        <div class="substep">
+          <h3>6a — Add Custom Domain in GitHub</h3>
+          <ol>
+            <li>Go to the repo: <a href="https://github.com/gerald1950ggg-ai/kevin-biz-plan" target="_blank">github.com/gerald1950ggg-ai/kevin-biz-plan</a></li>
+            <li>Click <strong>Settings</strong> → <strong>Pages</strong> (left sidebar)</li>
+            <li>Under <strong>"Custom domain"</strong>, enter <code>milesoftilestyles.com</code></li>
+            <li>Click <strong>Save</strong></li>
+            <li>Check <strong>"Enforce HTTPS"</strong> (GitHub provides free SSL)</li>
+          </ol>
+        </div>
+
+        <!-- 6b -->
+        <div class="substep">
+          <h3>6b — Add DNS Records in Cloudflare</h3>
+          <ol>
+            <li>In Cloudflare dashboard → your domain → <strong>DNS</strong> → <strong>Records</strong></li>
+            <li>Add an <strong>A record</strong> for the apex domain:</li>
+          </ol>
+
+          <div class="dns-record">
+            <span class="label">Type:</span> A &nbsp;|&nbsp; <span class="label">Name:</span> @ &nbsp;|&nbsp; <span class="label">Content:</span> 185.199.108.153 &nbsp;|&nbsp; <span class="label">Proxy:</span> DNS only (gray cloud)
+          </div>
+
+          <p style="margin-top:10px;margin-bottom:6px;font-size:0.9rem;font-weight:600;">Add three more A records (GitHub Pages uses 4 IPs):</p>
+          <div class="dns-record">
+            <span class="label">Type:</span> A &nbsp;|&nbsp; <span class="label">Name:</span> @ &nbsp;|&nbsp; <span class="label">Content:</span> 185.199.109.153 &nbsp;|&nbsp; <span class="label">Proxy:</span> DNS only<br/>
+            <span class="label">Type:</span> A &nbsp;|&nbsp; <span class="label">Name:</span> @ &nbsp;|&nbsp; <span class="label">Content:</span> 185.199.110.153 &nbsp;|&nbsp; <span class="label">Proxy:</span> DNS only<br/>
+            <span class="label">Type:</span> A &nbsp;|&nbsp; <span class="label">Name:</span> @ &nbsp;|&nbsp; <span class="label">Content:</span> 185.199.111.153 &nbsp;|&nbsp; <span class="label">Proxy:</span> DNS only
+          </div>
+
+          <p style="margin-top:14px;margin-bottom:6px;font-size:0.9rem;font-weight:600;">Add a CNAME for <code>www</code>:</p>
+          <div class="dns-record">
+            <span class="label">Type:</span> CNAME &nbsp;|&nbsp; <span class="label">Name:</span> www &nbsp;|&nbsp; <span class="label">Content:</span> gerald1950ggg-ai.github.io &nbsp;|&nbsp; <span class="label">Proxy:</span> DNS only
+          </div>
+
+          <div class="tip" style="margin-top:14px;">
+            <strong>📝 Note</strong>
+            A CNAME file also needs to be added to the repo — Gerald handles this part.
+          </div>
+        </div>
+
+        <!-- 6c -->
+        <div class="substep">
+          <h3>6c — Add SPF Record for Outgoing Email</h3>
+          <p>To make sure Kevin's outgoing emails don't get flagged as spam:</p>
+          <ol>
+            <li>In Cloudflare DNS, find the existing TXT/SPF record that Cloudflare added for email routing</li>
+            <li>Update it to include Google's servers:</li>
+          </ol>
+          <div class="dns-record">
+            <span class="label">Type:</span> TXT &nbsp;|&nbsp; <span class="label">Name:</span> @ <br/>
+            <span class="label">Content:</span> v=spf1 include:_spf.mx.cloudflare.net include:_spf.google.com ~all
+          </div>
+        </div>
+
+        <!-- 6d -->
+        <div class="substep">
+          <h3>6d — Add DMARC Record</h3>
+          <ol>
+            <li>In Cloudflare DNS, add:</li>
+          </ol>
+          <div class="dns-record">
+            <span class="label">Type:</span> TXT &nbsp;|&nbsp; <span class="label">Name:</span> _dmarc <br/>
+            <span class="label">Content:</span> v=DMARC1; p=none; rua=mailto:kevin@milesoftilestyles.com
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:16px;">
+          <strong>⏱ Wait 15–30 minutes</strong>
+          For DNS to propagate, then visit <a href="https://milesoftilestyles.com" target="_blank">milesoftilestyles.com</a> — your website should load.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="step">
+      <div class="step-badge">7</div>
+      <div class="step-content">
+        <h2>Test Everything</h2>
+        <div class="step-where">Run through this checklist before calling it done</div>
+
+        <ul class="checklist">
+          <li>
+            <input type="checkbox" id="c1" />
+            <label for="c1">Visit <a href="https://milesoftilestyles.com" target="_blank">milesoftilestyles.com</a> in a browser — website loads</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c2" />
+            <label for="c2">Visit <a href="https://www.milesoftilestyles.com" target="_blank">www.milesoftilestyles.com</a> — also loads (redirects to main domain)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c3" />
+            <label for="c3">The URL shows a padlock icon (HTTPS/SSL working)</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c4" />
+            <label for="c4">Send an email to <code>kevin@milesoftilestyles.com</code> from any outside account — arrives in Kevin's Gmail</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c5" />
+            <label for="c5">Reply from Gmail using the business address — recipient sees <code>kevin@milesoftilestyles.com</code> as sender</label>
+          </li>
+          <li>
+            <input type="checkbox" id="c6" />
+            <label for="c6">Compose a new email from Gmail, select <code>kevin@milesoftilestyles.com</code> in the "From" dropdown — sends correctly</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /.steps -->
+
+  <!-- ─── Important Notes ─── -->
+  <section class="notes-section">
+    <h2>Important Notes</h2>
+
+    <div class="notes-grid">
+      <div class="notes-card">
+        <h3>✅ What This Setup Can Do</h3>
+        <ul>
+          <li>Receive unlimited emails at <code>kevin@milesoftilestyles.com</code></li>
+          <li>Send emails that show <code>kevin@milesoftilestyles.com</code> as the sender</li>
+          <li>Create additional addresses (<code>info@</code>, <code>hello@</code>, etc.) all forwarding to the same Gmail</li>
+          <li>Host a fast, mobile-friendly website with free SSL</li>
+          <li>Free CDN through Cloudflare (website loads fast worldwide)</li>
+        </ul>
+      </div>
+
+      <div class="notes-card">
+        <h3>💰 Ongoing Costs</h3>
+        <ul>
+          <li>Domain renewal: ~$10–15/year</li>
+          <li>Everything else: $0, forever</li>
+        </ul>
+        <h3 style="margin-top:14px;">📈 If Kevin Outgrows This Setup</h3>
+        <ul>
+          <li><strong>More email features?</strong> → Google Workspace ($7/mo) adds DKIM, calendar, Drive, the works</li>
+          <li><strong>Website needs a CMS?</strong> → Migrate to a template platform but keep the same domain/Cloudflare setup</li>
+          <li><strong>Multiple team members?</strong> → Add more routes in Cloudflare (free) or upgrade to Workspace</li>
+        </ul>
+      </div>
+
+      <div class="notes-card limitation-card">
+        <h3>⚠ One Limitation — No DKIM on Free Gmail</h3>
+        <p style="font-size:0.9rem;margin-top:4px;">Free Gmail does not support DKIM signing for custom domains. DKIM is a cryptographic signature that proves the email came from your domain. <a href="https://workspace.google.com" target="_blank">Google Workspace</a> ($7/mo) adds this.</p>
+        <p style="font-size:0.9rem;margin-top:8px;"><strong>For Kevin's use case</strong> (replying to clients and designers one-to-one), SPF alone is sufficient. Emails will deliver fine. This only matters for bulk/cold email, which Kevin isn't doing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Quick Reference Card ─── -->
+  <div class="reference-card">
+    <h2>🗂 Quick Reference Card</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>What</th>
+          <th>Where</th>
+          <th>Login</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Domain registration</td>
+          <td><a href="https://www.domain.com" target="_blank">Domain.com</a> or <a href="https://www.namecheap.com" target="_blank">Namecheap</a></td>
+          <td><em style="color:#999;">(Kevin's credentials)</em></td>
+        </tr>
+        <tr>
+          <td>DNS + Email routing</td>
+          <td><a href="https://www.cloudflare.com" target="_blank">cloudflare.com</a></td>
+          <td><em style="color:#999;">(Kevin's credentials)</em></td>
+        </tr>
+        <tr>
+          <td>Website files</td>
+          <td><a href="https://github.com/gerald1950ggg-ai/kevin-biz-plan" target="_blank">github.com/gerald1950ggg-ai/kevin-biz-plan</a></td>
+          <td><em style="color:#999;">(Gerald manages)</em></td>
+        </tr>
+        <tr>
+          <td>Email inbox</td>
+          <td>Gmail</td>
+          <td><em style="color:#999;">(Kevin's existing Gmail)</em></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="support-note">Questions about this setup? Contact Marcus or Gerald.</div>
+  </div>
+
+  <!-- ─── Footer ─── -->
+  <footer class="site-footer">
+    Prepared by Gerald 🍊 · May 2026
+  </footer>
+
+</div><!-- /.page -->
+</body>
+</html>
